@@ -52,6 +52,12 @@ app.post("/products", async (req, res) => {
   res.redirect("products");
 });
 
+app.delete("/products/:id", async (req, res) => {
+  const { id } = req.params;
+  const deletedProduct = await Prodcut.findByIdAndDelete(id);
+  res.redirect("/products");
+});
+
 app.get("/products/:id", async (req, res) => {
   const { id } = req.params;
   const product = await Prodcut.findById(id);

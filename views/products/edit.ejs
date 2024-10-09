@@ -22,11 +22,13 @@
       />
 
       <select name="category">
-        <option value="fruits">fruits</option>
-        <option value="vegetables">vegetables</option>
-        <option value="dairy">dairy</option>
+        <option value="fruits" <%= product.category === 'fruits' ? 'selected' : '' %> >fruits</option>
+        <option value="vegetables" <%= product.category === 'vegetables' ? 'selected' : '' %> >vegetables</option>
+        <option value="dairy" <%= product.category === 'dairy' ? 'selected' : '' %>  >dairy</option>
       </select>
       <button>Submit</button>
     </form>
+
+    <a href="/products/<%= product._id %>/">Back to Product Page</a>
   </body>
 </html>

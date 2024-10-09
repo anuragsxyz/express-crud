@@ -9,5 +9,10 @@
     <h1><%= product.name %></h1>
     Price : INR <%= product.price %>/- <br />
     Category : <%= product.category %>
+
+    <a href="/products">Go Back </a>
+    <form method="post" action="/products/<%= product._id %>?_method=DELETE">
+      <button>Delete</button>
+    </form>
   </body>
 </html>
